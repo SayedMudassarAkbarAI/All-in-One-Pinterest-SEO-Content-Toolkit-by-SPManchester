@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# All-in-One Pinterest SEO & Content Toolkit by SPManchester
 
-## Getting Started
+> **Find what’s trending. Create better Pins. Grow with Pinterest.**  
+> Free Pinterest SEO, Trends, Content Generation & Downloader Tools by **SPManchester Private Limited Company**.
 
-First, run the development server:
+---
 
+## 🌟 Overview
+
+The **All-in-One Pinterest SEO & Content Toolkit** is a free-first, high-speed web application built to help Pinterest creators, bloggers, Etsy sellers, and eCommerce brands optimize their visual content, discover trending search terms, generate high-converting copy, and download publicly accessible Pinterest media in high definition.
+
+Developed and operated by **SPManchester Private Limited Company**, an international technology and digital solutions firm.
+
+---
+
+## 🛠️ Included Tools (13 Core Utilities)
+
+### 📈 Pinterest SEO & Keywords
+1. **Pinterest Trending Keywords Generator** (`/pinterest-trending-keywords-generator`) — Uncover surging search topics and breakout query variations.
+2. **Pinterest SEO Keywords Tool** (`/pinterest-seo-keywords`) — Discover primary, secondary, long-tail keywords, and semantic clusters.
+3. **Pinterest Keyword Comparison** (`/compare-keywords`) — Compare multiple keywords side-by-side to evaluate competition and opportunity index.
+
+### ✍️ Content Generation
+4. **Pinterest Hashtag Generator** (`/pinterest-hashtag-generator`) — Algorithm-safe broad, niche, and trending hashtag sets.
+5. **Pinterest Title Generator** (`/pinterest-title-generator`) — High-CTR pin titles with curiosity hooks, listicles, and character counts.
+6. **Pinterest Description Generator** (`/pinterest-description-generator`) — Natural keyword placement and proven calls-to-action (CTAs).
+7. **Pinterest Pin Ideas Generator** (`/pinterest-pin-ideas`) — Visual design layouts, Canva prompts, headline hooks, and content angles.
+
+### 🗓️ Trends & Planning
+8. **Pinterest Trends Explorer** (`/pinterest-trends`) — Search interest curves, velocity metrics, and peak demand cycles.
+9. **Seasonal Pinterest Trends** (`/seasonal-pinterest-trends`) — 60-day lead time calendar for Christmas, Halloween, Weddings, Summer, etc.
+
+### 📥 Public Media Downloaders
+10. **All-in-One Pinterest Downloader** (`/pinterest-downloader`) — Auto-detects and downloads public images, MP4 videos, and animated GIFs.
+11. **Pinterest Video Downloader** (`/pinterest-video-downloader`) — HD MP4 video downloader with original audio.
+12. **Pinterest Image Downloader** (`/pinterest-image-downloader`) — Uncompressed maximum resolution original photos.
+13. **Pinterest GIF Downloader** (`/pinterest-gif-downloader`) — Smooth animated loops and motion pins.
+
+---
+
+## 🏢 Corporate Entity
+
+**SPManchester Private Limited Company**  
+- **Website**: [spmanchester.com](https://spmanchester.com/)  
+- **Phone**: +92 306 4350580  
+- **Email**: info@spmanchester.com  
+- **Services**: Web Development, Mobile Apps, Graphic Design, IT Consultancy, Ads Management, SEO, eCommerce, Artificial Intelligence.
+
+---
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS & Modern Design System (Glassmorphism, Dark Mode)
+- **Architecture**: Route Handlers, SSRF Protection, Sliding Window Rate Limiter
+- **SEO**: Dynamic JSON-LD (Organization, WebSite, WebApplication, Breadcrumbs, FAQPage), OpenGraph, Twitter Cards, Dynamic XML Sitemap & Robots.txt
+- **Deployment**: Vercel & GitHub Actions CI
+
+---
+
+## 💻 Local Development
+
+1. Clone repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/SayedMudassarAkbarAI/All-in-One-Pinterest-SEO-Content-Toolkit-by-SPManchester.git
+cd All-in-One-Pinterest-SEO-Content-Toolkit-by-SPManchester
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 License & Disclaimer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Trademark Notice**: "Pinterest" is a registered trademark of Pinterest, Inc. This project is an independent tool by SPManchester Private Limited Company and is not affiliated with or endorsed by Pinterest, Inc.
+- **Copyright**: © 2026 SPManchester Private Limited Company. All rights reserved.
