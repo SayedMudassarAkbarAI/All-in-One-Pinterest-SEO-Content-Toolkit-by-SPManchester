@@ -9,6 +9,7 @@ import {
   generateWebSiteSchema,
 } from '@/lib/seo';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 export const viewport: Viewport = {
   themeColor: '#050a12',
@@ -86,6 +87,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
