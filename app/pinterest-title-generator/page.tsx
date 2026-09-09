@@ -53,10 +53,10 @@ export default function PinterestTitleGeneratorPage() {
       {/* Header & Intro */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="badge">High CTR Copywriting</span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
-          Pinterest Title Generator <span className="text-red-500">by SPManchester</span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Pinterest Title Generator <span className="text-[#E60023]">by SPManchester</span>
         </h1>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
           Craft irresistible, keyword-optimized Pin titles that stop the scroll and drive clicks to your website. Tested formulas across Listicles, How-To guides, and Curiosity hooks.
         </p>
       </div>
@@ -77,14 +77,14 @@ export default function PinterestTitleGeneratorPage() {
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="Optional: Target keyword to embed (e.g. vegan chocolate cake)"
-            className="w-full bg-[#0a1628]/60 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-red-500/60"
+            className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#E60023] shadow-xs"
           />
         </div>
       </div>
 
       {/* Error Message */}
       {error && (
-        <div className="p-4 max-w-2xl mx-auto bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-xl text-center">
+        <div className="p-4 max-w-2xl mx-auto bg-red-50 border border-red-200 text-[#E60023] text-sm rounded-xl text-center">
           {error}
         </div>
       )}
@@ -95,9 +95,9 @@ export default function PinterestTitleGeneratorPage() {
       {/* Results */}
       {titles.length > 0 && (
         <div className="space-y-4 max-w-4xl mx-auto animate-fade-in">
-          <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-            <h3 className="text-lg font-bold text-white">Generated High-CTR Titles</h3>
-            <span className="text-xs text-slate-400">{titles.length} Variations</span>
+          <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+            <h3 className="text-lg font-bold text-slate-900">Generated High-CTR Titles</h3>
+            <span className="text-xs text-slate-500 font-medium">{titles.length} Variations</span>
           </div>
 
           <div className="space-y-3">
@@ -105,15 +105,15 @@ export default function PinterestTitleGeneratorPage() {
               <ResultCard key={idx}>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">
                         {item.style}
                       </span>
-                      <span className="text-[11px] text-slate-500 font-mono">
+                      <span className="text-[11px] text-slate-400 font-mono">
                         {item.characterCount} / 100 chars
                       </span>
                     </div>
-                    <p className="text-sm sm:text-base font-semibold text-white">{item.title}</p>
+                    <p className="text-sm sm:text-base font-semibold text-slate-900">{item.title}</p>
                   </div>
                   <CopyButton text={item.title} label="Copy Title" variant="secondary" className="shrink-0" />
                 </div>
