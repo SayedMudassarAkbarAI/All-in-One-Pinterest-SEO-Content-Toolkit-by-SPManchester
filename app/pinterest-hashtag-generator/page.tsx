@@ -52,10 +52,10 @@ export default function PinterestHashtagGeneratorPage() {
       {/* Header & Intro */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="badge">Discovery Boost</span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
-          Pinterest Hashtag Generator <span className="text-red-500">by SPManchester</span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Pinterest Hashtag Generator <span className="text-[#E60023]">by SPManchester</span>
         </h1>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
           Generate algorithm-safe broad, niche, and trending Pinterest hashtags to accelerate discovery. Copy individual hashtags or one-click copy curated sets into your Pin descriptions.
         </p>
       </div>
@@ -72,7 +72,7 @@ export default function PinterestHashtagGeneratorPage() {
 
       {/* Error Message */}
       {error && (
-        <div className="p-4 max-w-2xl mx-auto bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-xl text-center">
+        <div className="p-4 max-w-2xl mx-auto bg-red-50 border border-red-200 text-[#E60023] text-sm rounded-xl text-center">
           {error}
         </div>
       )}
@@ -93,13 +93,13 @@ export default function PinterestHashtagGeneratorPage() {
               {hashtags.recommendedSet.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold"
+                  className="px-3 py-1.5 rounded-lg bg-red-50 border border-red-200/80 text-[#E60023] text-xs font-semibold"
                 >
                   {tag}
                 </span>
               ))}
             </div>
-            <p className="text-xs text-slate-400 mt-2">
+            <p className="text-xs text-slate-500 mt-2">
               Using 5 to 7 highly specific hashtags avoids spam filters and helps Pinterest categorize your content accurately.
             </p>
           </ResultCard>
@@ -115,7 +115,7 @@ export default function PinterestHashtagGeneratorPage() {
                 {hashtags.broad.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs hover:bg-slate-700 transition-colors"
+                    className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-700 text-xs hover:bg-slate-200/70 transition-colors"
                   >
                     {tag}
                   </span>
@@ -132,7 +132,7 @@ export default function PinterestHashtagGeneratorPage() {
                 {hashtags.niche.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs hover:bg-slate-700 transition-colors"
+                    className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-700 text-xs hover:bg-slate-200/70 transition-colors"
                   >
                     {tag}
                   </span>
@@ -142,9 +142,9 @@ export default function PinterestHashtagGeneratorPage() {
           </div>
 
           {/* Copy All Strip */}
-          <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-xs text-slate-400">
-              Total Generated Tags: <strong className="text-white font-mono">{hashtags.broad.length + hashtags.niche.length + hashtags.trending.length}</strong>
+          <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-xs text-slate-500">
+              Total Generated Tags: <strong className="text-slate-900 font-mono">{hashtags.broad.length + hashtags.niche.length + hashtags.trending.length}</strong>
             </div>
             <CopyButton text={hashtags.copyAllString} label="Copy Complete Hashtag Library" variant="primary" />
           </div>

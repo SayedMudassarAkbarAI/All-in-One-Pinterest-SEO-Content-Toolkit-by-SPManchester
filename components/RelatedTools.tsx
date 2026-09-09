@@ -25,14 +25,14 @@ export default function RelatedTools({
   const selected = filtered.slice(0, limit);
 
   return (
-    <section className="py-16 border-t border-slate-800/80">
+    <section className="py-16 border-t border-slate-200/80">
       <div className="text-center max-w-xl mx-auto mb-10">
         <span className="badge mb-2">Explore Ecosystem</span>
-        <h3 className="text-2xl font-bold text-white mb-2">
+        <h3 className="text-2xl font-bold text-slate-900 mb-2 tracking-tight">
           Related Pinterest Tools by SPManchester
         </h3>
-        <p className="text-xs text-slate-400">
-          Pair this tool with our other free Pinterest SEO utilities to amplify your impressions.
+        <p className="text-xs text-slate-500">
+          Pair this tool with our other free utilities to amplify your impressions.
         </p>
       </div>
 
