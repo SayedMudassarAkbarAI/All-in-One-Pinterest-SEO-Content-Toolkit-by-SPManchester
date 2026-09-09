@@ -49,10 +49,10 @@ export default function CompareKeywordsPage() {
       {/* Header & Intro */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="badge">Keyword Intelligence</span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
-          Pinterest Keyword Comparison <span className="text-red-500">by SPManchester</span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Pinterest Keyword Comparison <span className="text-red-600">by SPManchester</span>
         </h1>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
           Compare two or more Pinterest keywords side-by-side to evaluate audience demand, growth trajectory, opportunity scores, and seasonal peaks. Focus your creative effort on the highest-yielding topics.
         </p>
       </div>
@@ -61,7 +61,7 @@ export default function CompareKeywordsPage() {
       <form onSubmit={handleCompare} className="max-w-2xl mx-auto space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               Keyword A
             </label>
             <input
@@ -69,12 +69,12 @@ export default function CompareKeywordsPage() {
               value={kw1}
               onChange={(e) => setKw1(e.target.value)}
               placeholder="e.g. summer outfits"
-              className="w-full bg-[#0a1628]/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500"
+              className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all"
               required
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               Keyword B
             </label>
             <input
@@ -82,7 +82,7 @@ export default function CompareKeywordsPage() {
               value={kw2}
               onChange={(e) => setKw2(e.target.value)}
               placeholder="e.g. fall fashion"
-              className="w-full bg-[#0a1628]/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500"
+              className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all"
               required
             />
           </div>
@@ -91,7 +91,7 @@ export default function CompareKeywordsPage() {
         <button
           type="submit"
           disabled={loading || !kw1.trim() || !kw2.trim()}
-          className="btn btn-primary w-full py-3.5 rounded-xl font-semibold text-sm shadow-xl"
+          className="btn btn-primary w-full py-3.5 rounded-xl font-semibold text-sm shadow-sm hover:shadow-md transition-all"
         >
           {loading ? 'Comparing Metrics...' : 'Compare Search Opportunities'}
         </button>
@@ -99,7 +99,7 @@ export default function CompareKeywordsPage() {
 
       {/* Error Message */}
       {error && (
-        <div className="p-4 max-w-2xl mx-auto bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-xl text-center">
+        <div className="p-4 max-w-2xl mx-auto bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl text-center shadow-sm">
           {error}
         </div>
       )}
@@ -112,37 +112,37 @@ export default function CompareKeywordsPage() {
         <div className="space-y-8 max-w-5xl mx-auto animate-fade-in">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {comparisonResults.map((item, idx) => (
-              <div key={idx} className="glass-card p-6 rounded-2xl border border-slate-800 space-y-5">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+              <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-5">
+                <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-slate-400">
+                    <span className="text-[10px] uppercase tracking-wider font-bold text-slate-500">
                       Keyword #{idx + 1}
                     </span>
-                    <h3 className="text-xl font-black text-white capitalize">{item.keyword}</h3>
+                    <h3 className="text-xl font-black text-slate-900 capitalize">{item.keyword}</h3>
                   </div>
-                  <span className="px-2.5 py-1 rounded-md bg-red-500/10 text-red-400 text-xs font-bold border border-red-500/20">
+                  <span className="px-2.5 py-1 rounded-full bg-red-50 text-red-700 text-xs font-bold border border-red-200">
                     {item.trajectory}
                   </span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 text-center">
-                  <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
-                    <p className="text-[10px] text-slate-400 uppercase">Opportunity</p>
-                    <p className="text-lg font-black text-blue-400">{item.opportunityScore}/100</p>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <p className="text-[10px] text-slate-500 uppercase font-semibold">Opportunity</p>
+                    <p className="text-lg font-black text-blue-600">{item.opportunityScore}/100</p>
                   </div>
-                  <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
-                    <p className="text-[10px] text-slate-400 uppercase">Growth Rate</p>
-                    <p className="text-lg font-black text-emerald-400">+{item.growthPercentage}%</p>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <p className="text-[10px] text-slate-500 uppercase font-semibold">Growth Rate</p>
+                    <p className="text-lg font-black text-emerald-600">+{item.growthPercentage}%</p>
                   </div>
                 </div>
 
-                <div className="text-xs text-slate-300">
-                  <strong className="text-slate-400">Peak Demand Window:</strong> {item.peakMonths}
+                <div className="text-xs text-slate-600">
+                  <strong className="text-slate-800">Peak Demand Window:</strong> {item.peakMonths}
                 </div>
 
-                <div className="space-y-2 pt-2 border-t border-slate-800">
-                  <p className="text-xs font-semibold text-slate-400">Related High-Converting Searches:</p>
-                  <ul className="space-y-1.5 text-xs text-slate-300">
+                <div className="space-y-2 pt-2 border-t border-slate-100">
+                  <p className="text-xs font-semibold text-slate-600">Related High-Converting Searches:</p>
+                  <ul className="space-y-1.5 text-xs text-slate-700">
                     {item.relatedSearches.slice(0, 4).map((rel, rIdx) => (
                       <li key={rIdx} className="flex items-center justify-between result-item p-2">
                         <span>{rel}</span>

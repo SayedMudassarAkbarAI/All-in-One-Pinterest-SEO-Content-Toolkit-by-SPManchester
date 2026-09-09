@@ -48,10 +48,10 @@ export default function PinterestTrendsPage() {
       {/* Header & Intro */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="badge">Market Intelligence</span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
-          Pinterest Trends <span className="text-red-500">by SPManchester</span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Pinterest Trends <span className="text-red-600">by SPManchester</span>
         </h1>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
           Monitor search interest curves, breakout trajectory, and peak demand cycles across any niche on Pinterest. Plan your editorial calendar to align with seasonal user spikes.
         </p>
       </div>
@@ -68,7 +68,7 @@ export default function PinterestTrendsPage() {
 
       {/* Error Message */}
       {error && (
-        <div className="p-4 max-w-2xl mx-auto bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-xl text-center">
+        <div className="p-4 max-w-2xl mx-auto bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl text-center shadow-sm">
           {error}
         </div>
       )}
@@ -80,13 +80,13 @@ export default function PinterestTrendsPage() {
       {trend && (
         <div className="space-y-8 max-w-4xl mx-auto animate-fade-in">
           {/* Main Highlights */}
-          <div className="glass-card p-6 md:p-8 rounded-2xl border border-slate-800 space-y-6">
-            <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-800">
+          <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-100">
               <div>
-                <p className="text-xs text-slate-400 uppercase tracking-wider">Search Term Trend Report</p>
-                <h3 className="text-2xl font-black text-white capitalize mt-0.5">{trend.keyword}</h3>
+                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Search Term Trend Report</p>
+                <h3 className="text-2xl font-black text-slate-900 capitalize mt-0.5">{trend.keyword}</h3>
               </div>
-              <span className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase bg-red-500/10 text-red-400 border border-red-500/30">
+              <span className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase bg-red-50 text-red-700 border border-red-200">
                 {trend.trajectory} Trajectory
               </span>
             </div>
@@ -95,12 +95,12 @@ export default function PinterestTrendsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div>
                 <div className="flex justify-between text-xs font-semibold mb-1.5">
-                  <span className="text-slate-300">Audience Interest Score</span>
-                  <span className="text-red-400">{trend.searchInterest} / 100</span>
+                  <span className="text-slate-600">Audience Interest Score</span>
+                  <span className="text-red-600 font-bold">{trend.searchInterest} / 100</span>
                 </div>
-                <div className="w-full h-2.5 rounded-full bg-slate-800 overflow-hidden">
+                <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-red-500 to-rose-400 rounded-full transition-all duration-1000"
+                    className="h-full bg-gradient-to-r from-red-600 to-rose-500 rounded-full transition-all duration-1000"
                     style={{ width: `${trend.searchInterest}%` }}
                   />
                 </div>
@@ -108,12 +108,12 @@ export default function PinterestTrendsPage() {
 
               <div>
                 <div className="flex justify-between text-xs font-semibold mb-1.5">
-                  <span className="text-slate-300">Growth Velocity</span>
-                  <span className="text-emerald-400">+{trend.growthPercentage}%</span>
+                  <span className="text-slate-600">Growth Velocity</span>
+                  <span className="text-emerald-600 font-bold">+{trend.growthPercentage}%</span>
                 </div>
-                <div className="w-full h-2.5 rounded-full bg-slate-800 overflow-hidden">
+                <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full transition-all duration-1000"
+                    className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transition-all duration-1000"
                     style={{ width: `${Math.min(trend.growthPercentage, 100)}%` }}
                   />
                 </div>
@@ -121,12 +121,12 @@ export default function PinterestTrendsPage() {
 
               <div>
                 <div className="flex justify-between text-xs font-semibold mb-1.5">
-                  <span className="text-slate-300">Opportunity Index</span>
-                  <span className="text-blue-400">{trend.opportunityScore} / 100</span>
+                  <span className="text-slate-600">Opportunity Index</span>
+                  <span className="text-blue-600 font-bold">{trend.opportunityScore} / 100</span>
                 </div>
-                <div className="w-full h-2.5 rounded-full bg-slate-800 overflow-hidden">
+                <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full transition-all duration-1000"
+                    className="h-full bg-gradient-to-r from-blue-600 to-indigo-500 rounded-full transition-all duration-1000"
                     style={{ width: `${trend.opportunityScore}%` }}
                   />
                 </div>
@@ -134,12 +134,12 @@ export default function PinterestTrendsPage() {
             </div>
 
             {/* Strategic Summary */}
-            <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 text-xs space-y-1">
-              <span className="text-slate-400 font-semibold uppercase tracking-wider text-[10px]">
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1">
+              <span className="text-slate-500 font-semibold uppercase tracking-wider text-[10px]">
                 Editorial Recommendation:
               </span>
-              <p className="text-slate-200">
-                Peak consumer interest falls around <strong className="text-red-400">{trend.peakMonths}</strong>. Begin creating and publishing content 45 to 60 days before this window to capture maximum algorithmic momentum.
+              <p className="text-slate-700 leading-relaxed">
+                Peak consumer interest falls around <strong className="text-red-600">{trend.peakMonths}</strong>. Begin creating and publishing content 45 to 60 days before this window to capture maximum algorithmic momentum.
               </p>
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function PinterestTrendsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
               {trend.relatedSearches.map((item, idx) => (
                 <div key={idx} className="result-item">
-                  <span className="text-sm font-medium text-white">{item}</span>
+                  <span className="text-sm font-medium text-slate-800">{item}</span>
                   <CopyButton text={item} label="Copy" variant="ghost" />
                 </div>
               ))}
