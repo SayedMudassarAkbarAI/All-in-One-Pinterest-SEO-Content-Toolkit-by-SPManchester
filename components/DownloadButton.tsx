@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { Download, Loader2 } from 'lucide-react';
 
 interface DownloadButtonProps {
   url: string;
@@ -20,7 +21,6 @@ export default function DownloadButton({
   const handleDownload = async () => {
     try {
       setDownloading(true);
-      // Fetch file blob to trigger browser direct save
       const res = await fetch(url);
       const blob = await res.blob();
       const blobUrl = window.URL.createObjectURL(blob);
@@ -32,7 +32,6 @@ export default function DownloadButton({
       window.URL.revokeObjectURL(blobUrl);
       document.body.removeChild(a);
     } catch {
-      // Direct link fallback in new window
       window.open(url, '_blank');
     } finally {
       setDownloading(false);
@@ -44,23 +43,16 @@ export default function DownloadButton({
       onClick={handleDownload}
       disabled={downloading}
       type="button"
-      className={`btn btn-primary gap-2 ${className}`}
+      className={`btn btn-primary gap-1.5 text-xs py-2 px-3.5 rounded-lg shadow-sm ${className}`}
     >
       {downloading ? (
         <>
-          <span className="spinner w-4 h-4 border-white border-t-transparent" />
+          <Loader2 className="w-3.5 h-3.5 animate-spin" />
           <span>Downloading...</span>
         </>
       ) : (
         <>
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-            />
-          </svg>
+          <Download className="w-3.5 h-3.5" />
           <span>{label}</span>
         </>
       )}

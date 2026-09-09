@@ -17,17 +17,17 @@ export default function ResultCard({
   className = '',
 }: ResultCardProps) {
   return (
-    <div className={`glass-card p-5 relative border border-slate-800/90 rounded-xl bg-slate-900/40 backdrop-blur-md ${className}`}>
+    <div className={`saas-card-static p-5 sm:p-6 bg-white border border-slate-200/90 rounded-2xl shadow-xs ${className}`}>
       {(title || badge || copyText) && (
-        <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-800/80 gap-3">
+        <div className="flex items-center justify-between pb-3.5 mb-3.5 border-b border-slate-100 gap-3">
           <div className="flex items-center gap-2">
             {title && (
-              <h4 className="text-sm font-semibold text-white tracking-wide">
+              <h4 className="text-sm font-semibold text-slate-900 tracking-tight">
                 {title}
               </h4>
             )}
             {badge && (
-              <span className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20">
+              <span className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-red-50 text-[#E60023] border border-red-100">
                 {badge}
               </span>
             )}
@@ -35,7 +35,7 @@ export default function ResultCard({
           {copyText && <CopyButton text={copyText} />}
         </div>
       )}
-      <div className="text-sm text-slate-300">{children}</div>
+      <div className="text-sm text-slate-700">{children}</div>
     </div>
   );
 }

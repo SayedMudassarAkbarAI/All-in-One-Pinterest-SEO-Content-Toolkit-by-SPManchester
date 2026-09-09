@@ -12,7 +12,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
 export const viewport: Viewport = {
-  themeColor: '#050a12',
+  themeColor: '#FAFAFC',
   width: 'device-width',
   initialScale: 1,
 };
@@ -82,7 +82,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
       </head>
-      <body className="bg-[#050a12] text-slate-100 min-h-screen flex flex-col antialiased">
+      <body className="bg-[#FAFAFC] text-slate-900 font-sans min-h-screen flex flex-col antialiased selection:bg-red-50 selection:text-red-600">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
