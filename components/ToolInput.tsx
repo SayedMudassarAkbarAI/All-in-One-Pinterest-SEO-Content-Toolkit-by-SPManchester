@@ -44,7 +44,13 @@ export default function ToolInput({
             onChange={(e) => onChange(e.target.value)}
             placeholder={placeholder}
             disabled={disabled || loading}
-            className="w-full bg-transparent pl-10 pr-8 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none"
+            className="w-full bg-transparent pl-10 pr-8 py-3 text-slate-900 placeholder-slate-400 focus:outline-none"
+            style={{
+              /* 16px prevents iOS Safari auto-zoom on focus */
+              fontSize: '16px',
+              touchAction: 'manipulation',
+              WebkitAppearance: 'none',
+            }}
             required
           />
           {value && (
