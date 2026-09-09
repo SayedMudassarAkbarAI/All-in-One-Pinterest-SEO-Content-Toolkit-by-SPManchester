@@ -52,10 +52,10 @@ export default function PinterestGifDownloaderPage() {
       {/* Header & Intro */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="badge">Animated Loops</span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
-          Pinterest GIF Downloader <span className="text-red-500">by SPManchester</span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Pinterest GIF Downloader <span className="text-red-600">by SPManchester</span>
         </h1>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
           Download animated GIFs and looping motion pins directly from Pinterest in their original playback speed and resolution.
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function PinterestGifDownloaderPage() {
 
       {/* Error Message */}
       {error && (
-        <div className="p-4 max-w-2xl mx-auto bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-xl text-center">
+        <div className="p-4 max-w-2xl mx-auto bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl text-center shadow-sm">
           {error}
         </div>
       )}
@@ -87,7 +87,7 @@ export default function PinterestGifDownloaderPage() {
           <ResultCard className="p-6 md:p-8">
             <div className="flex flex-col md:flex-row gap-6 items-start">
               {downloadResult.media[0]?.thumbnail && (
-                <div className="w-full md:w-48 shrink-0 rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
+                <div className="w-full md:w-48 shrink-0 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-xs">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={downloadResult.media[0].thumbnail}
@@ -98,16 +98,16 @@ export default function PinterestGifDownloaderPage() {
               )}
 
               <div className="flex-1 space-y-4">
-                <h3 className="text-lg font-bold text-white">
+                <h3 className="text-lg font-bold text-slate-900">
                   {downloadResult.title || 'Pinterest GIF Asset'}
                 </h3>
 
-                <div className="space-y-2 pt-2 border-t border-slate-800">
+                <div className="space-y-2 pt-2 border-t border-slate-100">
                   {downloadResult.media.map((m, idx) => (
-                    <div key={idx} className="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div key={idx} className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200">
                       <div>
-                        <p className="text-xs font-bold text-white uppercase">{m.quality}</p>
-                        <span className="text-[10px] text-slate-400">Direct Download</span>
+                        <p className="text-xs font-bold text-slate-900 uppercase">{m.quality}</p>
+                        <span className="text-[10px] text-slate-500">Direct Download</span>
                       </div>
                       <DownloadButton url={m.url} filename={m.filename} label={`Download .${m.extension}`} />
                     </div>

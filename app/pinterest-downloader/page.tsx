@@ -52,10 +52,10 @@ export default function PinterestDownloaderPage() {
       {/* Header & Intro */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="badge">100% Free Public Downloader</span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
-          All-in-One Pinterest Downloader <span className="text-red-500">by SPManchester</span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          All-in-One Pinterest Downloader <span className="text-red-600">by SPManchester</span>
         </h1>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
           Download publicly accessible Pinterest images, MP4 videos, and animated GIFs in uncompressed original quality. Fast, safe, no watermarks, and no login required.
         </p>
       </div>
@@ -74,7 +74,7 @@ export default function PinterestDownloaderPage() {
 
       {/* Error Message */}
       {error && (
-        <div className="p-4 max-w-2xl mx-auto bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-xl text-center">
+        <div className="p-4 max-w-2xl mx-auto bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl text-center shadow-sm">
           {error}
         </div>
       )}
@@ -89,7 +89,7 @@ export default function PinterestDownloaderPage() {
             <div className="flex flex-col md:flex-row gap-6 items-start">
               {/* Thumbnail / Media Preview */}
               {downloadResult.media[0]?.thumbnail && (
-                <div className="w-full md:w-48 shrink-0 rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
+                <div className="w-full md:w-48 shrink-0 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-xs">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={downloadResult.media[0].thumbnail}
@@ -102,34 +102,34 @@ export default function PinterestDownloaderPage() {
               {/* Media Details & Download Buttons */}
               <div className="flex-1 space-y-4">
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-red-400 px-2 py-0.5 rounded bg-red-500/10 border border-red-500/20">
+                  <span className="text-[10px] uppercase font-bold text-red-700 px-2 py-0.5 rounded-full bg-red-50 border border-red-200">
                     Public Media Detected
                   </span>
-                  <h3 className="text-lg font-bold text-white mt-1">
+                  <h3 className="text-lg font-bold text-slate-900 mt-1.5">
                     {downloadResult.title || 'Pinterest Pin Asset'}
                   </h3>
                   {downloadResult.description && (
-                    <p className="text-xs text-slate-400 line-clamp-2 mt-1">
+                    <p className="text-xs text-slate-500 line-clamp-2 mt-1">
                       {downloadResult.description}
                     </p>
                   )}
                 </div>
 
-                <div className="space-y-3 pt-3 border-t border-slate-800">
-                  <p className="text-xs font-semibold text-slate-300">
+                <div className="space-y-3 pt-3 border-t border-slate-100">
+                  <p className="text-xs font-semibold text-slate-700">
                     Available Download Formats:
                   </p>
                   <div className="flex flex-col gap-2.5">
                     {downloadResult.media.map((media, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800"
+                        className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200"
                       >
                         <div>
-                          <p className="text-xs font-bold text-white uppercase tracking-wider">
+                          <p className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                             {media.quality}
                           </p>
-                          <span className="text-[10px] text-slate-400 uppercase font-mono">
+                          <span className="text-[10px] text-slate-500 uppercase font-mono">
                             .{media.extension} format
                           </span>
                         </div>
@@ -178,8 +178,8 @@ export default function PinterestDownloaderPage() {
       />
 
       {/* Disclaimer Section per TRD Section 12 */}
-      <div className="max-w-3xl mx-auto p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 text-center text-xs text-slate-400 space-y-1">
-        <p className="font-semibold text-slate-300">Intellectual Property & Fair Use Disclaimer</p>
+      <div className="max-w-3xl mx-auto p-4 rounded-xl bg-slate-50 border border-slate-200 text-center text-xs text-slate-500 space-y-1">
+        <p className="font-semibold text-slate-700">Intellectual Property & Fair Use Disclaimer</p>
         <p>
           SPManchester does not host or store any media files on its servers. All media is fetched directly from public Pinterest CDN servers. Please respect creator copyright and use downloaded media only for personal inspiration, research, or fair use.
         </p>

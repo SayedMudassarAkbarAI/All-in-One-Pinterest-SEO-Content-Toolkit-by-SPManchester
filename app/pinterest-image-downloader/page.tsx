@@ -54,10 +54,10 @@ export default function PinterestImageDownloaderPage() {
       {/* Header & Intro */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="badge">Max Resolution JPEG/PNG</span>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
-          Pinterest Image Downloader <span className="text-red-500">by SPManchester</span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Pinterest Image Downloader <span className="text-red-600">by SPManchester</span>
         </h1>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
           Save original, uncompressed high-resolution images, infographics, wallpapers, and photos from any public Pinterest Pin. No quality loss, no watermark.
         </p>
       </div>
@@ -75,7 +75,7 @@ export default function PinterestImageDownloaderPage() {
 
       {/* Error Message */}
       {error && (
-        <div className="p-4 max-w-2xl mx-auto bg-red-500/10 border border-red-500/30 text-red-400 text-sm rounded-xl text-center">
+        <div className="p-4 max-w-2xl mx-auto bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl text-center shadow-sm">
           {error}
         </div>
       )}
@@ -89,7 +89,7 @@ export default function PinterestImageDownloaderPage() {
           <ResultCard className="p-6 md:p-8">
             <div className="flex flex-col md:flex-row gap-6 items-start">
               {imageMedia[0]?.url && (
-                <div className="w-full md:w-48 shrink-0 rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
+                <div className="w-full md:w-48 shrink-0 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-xs">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={imageMedia[0].url}
@@ -100,16 +100,16 @@ export default function PinterestImageDownloaderPage() {
               )}
 
               <div className="flex-1 space-y-4">
-                <h3 className="text-lg font-bold text-white">
+                <h3 className="text-lg font-bold text-slate-900">
                   {downloadResult.title || 'Pinterest Image'}
                 </h3>
 
-                <div className="space-y-2 pt-2 border-t border-slate-800">
+                <div className="space-y-2 pt-2 border-t border-slate-100">
                   {imageMedia.map((m, idx) => (
-                    <div key={idx} className="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div key={idx} className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200">
                       <div>
-                        <p className="text-xs font-bold text-white uppercase">{m.quality}</p>
-                        <span className="text-[10px] text-slate-400">Direct CDN File</span>
+                        <p className="text-xs font-bold text-slate-900 uppercase">{m.quality}</p>
+                        <span className="text-[10px] text-slate-500">Direct CDN File</span>
                       </div>
                       <DownloadButton url={m.url} filename={m.filename} label="Download Image" />
                     </div>
