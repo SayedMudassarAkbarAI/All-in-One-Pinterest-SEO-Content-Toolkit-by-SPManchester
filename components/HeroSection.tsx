@@ -27,80 +27,70 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative py-20 md:py-28 bg-white overflow-hidden">
+    <section className="relative pt-20 pb-20 md:pt-28 md:pb-24 bg-white overflow-hidden text-center">
       {/* Ambient gradient glow */}
       <div className="absolute inset-0 pointer-events-none -z-10">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-b from-red-500/[0.07] via-rose-500/[0.02] to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-red-500/[0.07] via-rose-500/[0.02] to-transparent rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center max-w-6xl">
-        {/* Left side – copy */}
-        <div className="lg:w-1/2 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 shadow-xs hover:border-red-200/80 transition-all">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="space-y-6">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 shadow-xs hover:border-red-200/80 transition-all">
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E60023]" />
             </span>
-            <span className="tracking-wide">FREE PINTEREST SEO & CONTENT TOOLKIT 2026 🚀</span>
+            <span className="tracking-wide">FREE PINTEREST SEO &amp; CONTENT TOOLKIT 2026 🚀</span>
             <Sparkles className="w-3.5 h-3.5 text-[#E60023]" />
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#101828] leading-[1.05]">
-            Everything You Need to{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#E60023] to-[#E60023]">
-              Grow
-            </span>{' '}
-            on Pinterest
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-[#101828] leading-[1.08] tracking-tight">
+            Everything You Need to<br className="hidden sm:inline" />{' '}
+            <span className="text-[#E60023]">
+              Grow on Pinterest
+            </span>
           </h1>
-          <p className="text-base md:text-lg text-[#667085] max-w-lg">
+          <p className="text-base sm:text-xl text-[#667085] max-w-2xl mx-auto leading-relaxed">
             Discover breakout trends, generate keyword‑optimized Pin copy, and unlock viral traffic with powerful Pinterest tools.
           </p>
 
-          {/* Search bar */}
-          <form onSubmit={handleSearch} className="max-w-xl">
-            <div className="flex items-center p-2 rounded-2xl bg-white border border-slate-200 shadow-[0_10px_35px_-5px_rgba(15,23,42,0.08)] hover:border-slate-300 focus-within:border-[#E60023] focus-within:ring-4 focus-within:ring-red-500/10 transition-all duration-200">
-              <Search className="w-5 h-5 text-slate-400 ml-3.5 mr-2 shrink-0" />
-              <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search any keyword, niche, or topic (e.g. capsule wardrobe, summer nails...)"
-                className="flex-1 bg-transparent py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none"
-              />
+          {/* Large Centered Search bar */}
+          <form onSubmit={handleSearch} className="max-w-2xl mx-auto pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 p-2 sm:p-2.5 rounded-2xl bg-white border-2 border-slate-200/90 shadow-[0_12px_40px_-10px_rgba(15,23,42,0.12)] hover:border-red-300 focus-within:border-[#E60023] focus-within:ring-4 focus-within:ring-red-500/15 transition-all">
+              <div className="flex items-center gap-3.5 flex-1 px-4 py-2 sm:py-0">
+                <Search className="w-6 h-6 text-slate-400 shrink-0" />
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search any keyword, niche, or topic (e.g. summer outfits, home decor...)"
+                  className="w-full bg-transparent py-2 text-slate-900 placeholder-slate-400 text-base sm:text-lg focus:outline-none font-medium"
+                />
+              </div>
               <button
                 type="submit"
-                className="btn btn-primary py-2.5 px-6 rounded-xl font-semibold text-xs shrink-0 shadow-sm flex items-center gap-1.5"
+                className="bg-[#E60023] hover:bg-[#c9001f] active:scale-[0.98] text-white py-3.5 sm:py-4 px-8 sm:px-10 rounded-xl font-bold text-base shrink-0 shadow-md shadow-red-600/25 flex items-center justify-center gap-2 cursor-pointer transition-all"
               >
                 <span>Explore</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </form>
 
-          {/* Popular searches */}
-          <div className="flex flex-wrap items-center gap-2 text-xs text-[#667085] mt-3">
-            <span className="font-medium">Popular searches:</span>
+          {/* Centered Popular searches */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 text-sm text-[#667085] pt-2">
+            <span className="font-semibold flex items-center gap-1.5">🔥 Popular searches:</span>
             {popular.map((term) => (
               <button
                 key={term}
                 type="button"
                 onClick={() => setQuery(term)}
-                className="px-3 py-1 rounded-full bg-white border border-slate-200/90 text-slate-600 hover:text-[#E60023] hover:border-red-200 shadow-xs transition-colors"
+                className="px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:text-[#E60023] hover:border-red-300 hover:bg-red-50/50 text-xs sm:text-sm font-medium shadow-2xs transition-all cursor-pointer"
               >
                 {term}
               </button>
             ))}
           </div>
-        </div>
-
-        {/* Right side – visual mockup */}
-        <div className="lg:w-1/2 mb-8 lg:mb-0 flex justify-center items-center">
-          {/* Placeholder image – copy the generated hero visual to public/hero.jpg */}
-          <img
-            src="/hero.jpg"
-            alt="Pinterest SEO dashboard mockup"
-            className="max-w-full rounded-xl shadow-lg"
-          />
         </div>
       </div>
     </section>

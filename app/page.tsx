@@ -52,183 +52,92 @@ export default function HomePage() {
   return (
     <div className="bg-white min-h-screen text-slate-800 selection:bg-red-100 selection:text-red-900">
 
+
       {/* ══════════════════════════════════════════════════════════
-          HERO  –  Spacious, User-Friendly, Larger & Impactful
+          HERO  –  Centered, Larger, Ultra-Professional SaaS
       ══════════════════════════════════════════════════════════ */}
-      <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden bg-white">
-        {/* Soft radial atmospheric glow */}
+      <section className="relative pt-20 pb-20 md:pt-28 md:pb-24 overflow-hidden bg-white">
+        {/* Soft atmospheric radial glow top-center */}
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute -top-24 right-0 w-[800px] h-[650px] bg-gradient-to-bl from-red-100/70 via-rose-50/40 to-transparent rounded-full blur-3xl opacity-80" />
-          <div className="absolute top-1/2 left-[-200px] w-[500px] h-[500px] bg-gradient-to-tr from-slate-100/60 to-transparent rounded-full blur-3xl" />
+          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-red-100/70 via-rose-50/30 to-transparent rounded-full blur-3xl opacity-80" />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-
-            {/* LEFT – copy & actions */}
-            <div className="lg:col-span-7 space-y-8">
-              {/* Eyebrow badge */}
-              <div className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#E60023] bg-red-50 border border-red-200/80 px-4 py-1.5 rounded-full shadow-xs">
-                <span className="flex h-2 w-2 rounded-full bg-[#E60023] animate-ping" />
-                FREE PINTEREST SEO &amp; CONTENT TOOLKIT 2026 🚀
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight">
-                Everything You Need to{' '}
-                <span className="text-[#E60023]">Grow on Pinterest</span>
-              </h1>
-
-              {/* Subheadline */}
-              <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
-                Discover breakout trends, generate keyword-optimised Pin copy, and unlock viral organic traffic with 13 free tools engineered by SPManchester.
-              </p>
-
-              {/* Large, user-friendly search bar */}
-              <form onSubmit={handleHeroSearch} className="max-w-2xl">
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 p-2 sm:p-2.5 rounded-2xl bg-white border-2 border-slate-200/90 shadow-xl hover:border-red-300 focus-within:border-[#E60023] focus-within:ring-4 focus-within:ring-red-500/15 transition-all">
-                  <div className="flex items-center gap-3 flex-1 px-3 py-2 sm:py-0">
-                    <Search className="w-5 h-5 text-slate-400 shrink-0" />
-                    <input
-                      type="text"
-                      value={searchSeed}
-                      onChange={(e) => setSearchSeed(e.target.value)}
-                      placeholder="Search any keyword, niche, or topic (e.g. home decor, summer nails...)"
-                      className="w-full bg-transparent text-slate-900 placeholder-slate-400 text-base sm:text-lg focus:outline-none font-medium py-1.5"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="bg-[#E60023] hover:bg-[#c9001f] active:scale-[0.98] text-white py-3.5 px-8 rounded-xl font-bold text-base shrink-0 flex items-center justify-center gap-2 shadow-md shadow-red-600/20 transition-all cursor-pointer"
-                  >
-                    Explore <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </form>
-
-              {/* Popular search tags */}
-              <div className="flex flex-wrap items-center gap-2.5 pt-1 text-sm">
-                <span className="text-slate-500 font-semibold flex items-center gap-1.5 mr-1">🔥 Popular:</span>
-                {['pinterest seo tools', 'home decor', 'fashion trends', 'travel tips', 'health & wellness'].map((s) => (
-                  <button
-                    key={s}
-                    type="button"
-                    onClick={() => router.push(`/pinterest-trending-keywords-generator?q=${encodeURIComponent(s)}`)}
-                    className="px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-700 hover:text-[#E60023] hover:border-red-300 hover:bg-red-50/50 text-xs sm:text-sm font-medium transition-all shadow-2xs cursor-pointer"
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-
-              {/* Quick trust metrics */}
-              <div className="pt-2 flex flex-wrap items-center gap-6 text-sm text-slate-500 font-medium">
-                <span className="flex items-center gap-2 text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  100% Free Forever
-                </span>
-                <span className="flex items-center gap-2 text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  No Account or Card Required
-                </span>
-                <span className="flex items-center gap-2 text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  Instant Algorithm Insights
-                </span>
-              </div>
-            </div>
-
-            {/* RIGHT – Visual Dashboard Mockup */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[520px]">
-                {/* Main mockup container */}
-                <div className="rounded-3xl bg-white border border-slate-200 shadow-2xl shadow-slate-200/70 p-6 sm:p-7 space-y-5">
-                  {/* Browser chrome header */}
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                    <div className="flex items-center gap-2">
-                      <span className="w-3 h-3 rounded-full bg-rose-400" />
-                      <span className="w-3 h-3 rounded-full bg-amber-400" />
-                      <span className="w-3 h-3 rounded-full bg-emerald-400" />
-                    </div>
-                    <span className="text-xs font-mono text-slate-400 bg-slate-50 px-3 py-1 rounded-md border border-slate-100">pinterest-seo.spmanchester.com</span>
-                  </div>
-
-                  {/* Tabs */}
-                  <div className="flex gap-5 text-sm font-bold border-b border-slate-100 pb-2.5">
-                    {['Keyword Ideas', 'Clusters', 'Trends', 'Content Ideas'].map((tab, i) => (
-                      <span
-                        key={tab}
-                        className={`pb-1 cursor-default ${i === 0 ? 'text-[#E60023] border-b-2 border-[#E60023]' : 'text-slate-400 hover:text-slate-600'}`}
-                      >
-                        {tab}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Mock search bar */}
-                  <div className="flex items-center gap-3">
-                    <div className="flex-1 flex items-center gap-2.5 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-700 bg-slate-50/70">
-                      <Search className="w-4 h-4 text-slate-400" />
-                      <span className="font-medium">home decor</span>
-                    </div>
-                    <button className="bg-[#E60023] text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-xs">
-                      Generate
-                    </button>
-                  </div>
-
-                  {/* Keywords Table */}
-                  <div className="rounded-xl overflow-hidden border border-slate-200/80 bg-white">
-                    <table className="w-full text-left text-xs border-collapse">
-                      <thead className="bg-slate-50 text-[11px] font-bold text-slate-500 uppercase tracking-wider border-b border-slate-100">
-                        <tr>
-                          <th className="py-2.5 px-3">Keyword</th>
-                          <th className="py-2.5 px-3 text-center">Volume</th>
-                          <th className="py-2.5 px-3 text-center">Diff</th>
-                          <th className="py-2.5 px-3 text-right">Type</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-slate-100">
-                        {DEMO_ROWS.map((row, i) => (
-                          <tr key={i} className="hover:bg-slate-50/60 transition-colors">
-                            <td className="py-2.5 px-3 text-slate-900 font-semibold">{row.keyword}</td>
-                            <td className="py-2.5 px-3 text-slate-600 font-mono text-center font-medium">{row.volume}</td>
-                            <td className="py-2.5 px-3 text-center">
-                              <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-bold border ${row.diffColor}`}>{row.difficulty}</span>
-                            </td>
-                            <td className="py-2.5 px-3 text-slate-500 text-right text-[11px]">{row.type}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  {/* Keyword Clusters */}
-                  <div>
-                    <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">High-Relevance Clusters</div>
-                    <div className="flex flex-wrap gap-2">
-                      {CLUSTERS.map((c) => (
-                        <span key={c} className="text-xs px-3 py-1 rounded-lg bg-red-50 text-[#E60023] border border-red-100 font-medium">
-                          {c}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Growth Badge */}
-                <div className="absolute -bottom-6 -right-4 bg-white border border-slate-200/90 rounded-2xl shadow-xl p-4 text-xs font-semibold text-slate-700 flex items-center gap-3.5 z-10 animate-bounce-subtle">
-                  <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-[#E60023] shrink-0">
-                    <TrendingUp className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-slate-900 text-sm">More Reach</div>
-                    <div className="text-xs text-slate-400">More Traffic · More Growth</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
+          {/* Eyebrow badge */}
+          <div className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#E60023] bg-red-50 border border-red-200/80 px-4 py-1.5 rounded-full shadow-xs mb-6">
+            <span className="flex h-2 w-2 rounded-full bg-[#E60023] animate-ping" />
+            FREE PINTEREST SEO &amp; CONTENT TOOLKIT 2026 🚀
           </div>
+
+          {/* Main Headline */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.08] tracking-tight mb-6">
+            Everything You Need to<br className="hidden sm:inline" />{' '}
+            <span className="text-[#E60023]">Grow on Pinterest</span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-slate-600 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto font-normal mb-10">
+            Discover breakout trends, generate keyword-optimised Pin copy, create high-CTR content, and unlock viral traffic with 13 free tools engineered by SPManchester.
+          </p>
+
+          {/* Large, Centered, Ultra-Professional Search Bar */}
+          <form onSubmit={handleHeroSearch} className="max-w-3xl mx-auto mb-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 p-2.5 sm:p-3 rounded-2xl bg-white border-2 border-slate-200 shadow-[0_16px_48px_-12px_rgba(15,23,42,0.14)] hover:border-red-300 focus-within:border-[#E60023] focus-within:ring-4 focus-within:ring-red-500/15 transition-all">
+              <div className="flex items-center gap-3.5 flex-1 px-4 py-2 sm:py-1">
+                <Search className="w-6 h-6 text-slate-400 shrink-0" />
+                <input
+                  type="text"
+                  value={searchSeed}
+                  onChange={(e) => setSearchSeed(e.target.value)}
+                  placeholder="Search any keyword, niche, or topic (e.g. summer outfits, home decor, summer nails...)"
+                  className="w-full bg-transparent text-slate-900 placeholder-slate-400 text-base sm:text-lg focus:outline-none font-medium py-2.5"
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-[#E60023] hover:bg-[#c9001f] active:scale-[0.98] text-white py-4 px-9 rounded-xl font-bold text-base shrink-0 flex items-center justify-center gap-2 shadow-lg shadow-red-600/30 transition-all cursor-pointer"
+              >
+                <span>Explore</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </form>
+
+          {/* Centered Popular Searches */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-10 text-sm">
+            <span className="text-slate-500 font-semibold flex items-center gap-1.5 mr-1">🔥 Popular searches:</span>
+            {['summer outfits', 'home decor', 'wedding ideas', 'bullet journal', 'matcha latte', 'fashion trends'].map((s) => (
+              <button
+                key={s}
+                type="button"
+                onClick={() => router.push(`/pinterest-trending-keywords-generator?q=${encodeURIComponent(s)}`)}
+                className="px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:text-[#E60023] hover:border-red-300 hover:bg-red-50/50 text-xs sm:text-sm font-semibold transition-all shadow-2xs cursor-pointer"
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+
+          {/* Dual Action Buttons matching reference */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-5">
+            <Link
+              href="/#tools"
+              className="bg-[#E60023] hover:bg-[#c9001f] text-white px-9 py-4 rounded-xl font-bold text-base flex items-center gap-2 shadow-lg shadow-red-600/25 transition-all cursor-pointer"
+            >
+              Explore Free Tools <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/pinterest-seo-keywords"
+              className="bg-white border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-800 px-9 py-4 rounded-xl font-bold text-base transition-all shadow-xs"
+            >
+              Explore Pinterest SEO
+            </Link>
+          </div>
+
+          {/* Trust Subtext */}
+          <p className="text-xs sm:text-sm text-slate-500 font-medium">
+            13+ Free Tools · No Credit Card Required · Built by SPManchester Private Limited Company
+          </p>
         </div>
       </section>
 
