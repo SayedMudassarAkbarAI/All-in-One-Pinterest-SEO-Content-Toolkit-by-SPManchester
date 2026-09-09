@@ -57,44 +57,41 @@ export default function Header() {
       }`}
     >
       {/* Nav bar */}
-      <div
-        className="container mx-auto flex items-center justify-between"
-        style={{ height: '64px' }}
-      >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between h-20">
         {/* Brand Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 group focus:outline-none shrink-0"
+          className="flex items-center gap-3 group focus:outline-none shrink-0"
           aria-label="SPManchester — Home"
         >
-          <div className="relative flex items-center" style={{ width: 136, height: 36 }}>
+          <div className="relative flex items-center" style={{ width: 150, height: 40 }}>
             <Image
               src="/logo/spmanchester_logoo.png"
               alt="SPManchester Private Limited Company"
-              width={136}
-              height={36}
+              width={150}
+              height={40}
               className="object-contain"
               priority
             />
           </div>
-          <span className="hidden xl:inline-flex items-center gap-1.5 text-[10.5px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 border border-slate-200 leading-none select-none">
-            <Sparkles className="w-3 h-3 text-[#E60023]" />
+          <span className="hidden xl:inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200 select-none">
+            <Sparkles className="w-3.5 h-3.5 text-[#E60023]" />
             Toolkit
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1" aria-label="Main navigation">
+        <nav className="hidden lg:flex items-center gap-2 xl:gap-3" aria-label="Main navigation">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`px-3 py-1.5 rounded-md text-[13.5px] font-medium transition-all leading-none ${
+                className={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-all ${
                   active
-                    ? 'text-[#E60023] bg-red-50/80 font-semibold'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80'
+                    ? 'text-[#E60023] bg-red-50 font-bold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/90'
                 }`}
               >
                 {link.name}
@@ -107,11 +104,10 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-3 shrink-0">
           <Link
             href="/#tools"
-            className="btn btn-primary rounded-lg shadow-sm"
-            style={{ fontSize: '13px', padding: '0.55rem 1.1rem', minHeight: '38px' }}
+            className="bg-[#E60023] hover:bg-[#c9001f] text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-md shadow-red-600/20 flex items-center gap-2 transition-all cursor-pointer"
           >
             <span>Explore Free Tools</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 

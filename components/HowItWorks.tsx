@@ -47,48 +47,50 @@ export default function HowItWorks({
   ];
 
   return (
-    <section className="py-20">
-      <div className="text-center max-w-2xl mx-auto mb-16">
-        <span className="badge mb-3">Simple Workflow</span>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3 tracking-tight">
+    <div className="w-full">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#E60023] bg-red-50 border border-red-200/70 px-4 py-1.5 rounded-full shadow-xs mb-4">
+          Simple Workflow
+        </span>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-4 tracking-tight">
           {title}
         </h2>
-        <p className="text-slate-500 text-sm">{subtitle}</p>
+        <p className="text-slate-600 text-base sm:text-lg leading-relaxed">{subtitle}</p>
       </div>
 
       <div className="relative">
         {/* Horizontal Connecting Line (Desktop) */}
-        <div className="hidden lg:block absolute top-1/2 left-[12%] right-[12%] h-[1px] bg-slate-200 -translate-y-12 z-0" />
+        <div className="hidden lg:block absolute top-1/2 left-[10%] right-[10%] h-[1px] bg-slate-200 -translate-y-10 z-0" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 relative z-10">
           {steps.map((step, idx) => (
             <div
               key={step.number}
-              className="saas-card p-6 rounded-2xl bg-white border border-slate-200/90 flex flex-col justify-between"
+              className="saas-card p-7 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center">
                     {stepIcons[idx % stepIcons.length]}
                   </div>
-                  <span className="text-xs font-mono font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
+                  <span className="text-xs font-mono font-bold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md">
                     {step.number}
                   </span>
                 </div>
-                <h4 className="text-base font-bold text-slate-900 mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2.5">
                   {step.title}
-                </h4>
-                <p className="text-xs text-slate-500 leading-relaxed">
+                </h3>
+                <p className="text-sm text-slate-500 leading-relaxed">
                   {step.description}
                 </p>
               </div>
-              <div className="mt-6 pt-3 border-t border-slate-100 text-[11px] font-semibold text-slate-400">
+              <div className="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-400">
                 Step {step.number} of 04
               </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
